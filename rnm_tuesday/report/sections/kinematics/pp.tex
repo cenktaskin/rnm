@@ -1,0 +1,3 @@
+Path planning aims to find a continuous map $g$ from start point, $g(0)$ to goal point $g(1)$ in configuration space, taking into account where the known world $W$ is occupied by obstacles or with the robot itself. With the inverse kinematics we can map these points to their corresponding configurations, namely $q_s$ and $q_g$.
+
+In this study we don't consider obstacles, so motion planning simplifies to trajectory generation, which is enough to 'move' the robot from its former pose into the goal position with a simple check on joint limits.

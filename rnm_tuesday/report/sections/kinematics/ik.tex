@@ -1,0 +1,15 @@
+As forward kinematics determine the position and orientation of the end effector from joint variables, inverse kinematics determines the latter given the former. More generally, given a homogeneous transformation
+$$
+H = 
+\begin{bmatrix}
+R & p \\
+0 & 1
+\end{bmatrix}
+$$
+find joint variables
+$$
+T_n^0(q_1,...,q_n) = H
+$$
+Although there are closed form solutions to the system of equations, as geometry of robot gets more complex they become hard to solve analytically. In this study we used a common approach to approximate the solution of systems, namely least squares. The least-squares method finds the optimal parameter values by  minimizing the sum of squared residuals
+
+$$S=\sum_{i=1}^{n}r_i^2.$$

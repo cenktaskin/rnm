@@ -1,0 +1,19 @@
+\subsection{Contributions}
+This report is prepared jointly;
+A.K. took the responsibility of Vision section, O.C.T. prepared the rest of the sections and organised the paper, whilst M.D. and K.K. supported with revision and initial templates. Participants explain their parts of the work in the following paragraphs.
+
+\subsubsection{Aishwarya Krishnamurthy} My contributions to the project were to completely implement the Vision package starting from camera calibration up till Point Cloud registration. For model recording  my other teammate Chinmay recorded and collected the point clouds as a rosbag for further processing. The Vision part was completely conducted offline due to version incompatibility of Open3D on my VM. Due to some minor error in the file handling in hand-eye calibration we were not able to get the target from the point cloud, although it worked on the simulation data and the logic and the rest of the code functions well.
+
+\subsubsection{Chinmay Sujir} To get a better understanding of Point Cloud Recording and  Model Registration, ICP and PCL were referred to, along with a Python based PCL named Strawlab library.
+While there were no problems in converting and processing  the .PCD files obtained from the ROSBAG using the above mentioned papers and libraries.
+Due to the lack of documentation of the Strawlab library and the incompatibility of the converted  ROSBAGS to a .PCD or  .PLY file, for MATLAB ROS toolbox and Vision toolbox. The apporach to Model registration had to be restructured and handed over to  Aishwarya.
+
+\subsubsection{Konika Narendra Khatri } Solving inverse kinematics using Analytical approach involves a lot of matrix algebra and trigonometry.But the advantage of this approach is that once you have drawn the kinematic diagram, derived the equations, computation is fast as compared to Numerical approach. On the other hand the disadvantage is the kinematic diagram and trigonometric equation are exhausting to derive. For each new robotic arm you have to derive new equations, so generalization does not apply over here. I referred Tutorial 5 Geometrical method to solve inverse kinematics using Python and there were some issue in the calculation part of last three joint angles.
+
+\subsubsection{Mansi Dayama} Solved forward kinematics using classic DH formula but then the output was not as expected. So Aishwarya helped in the implementation of forward kinematics using modified DH formula. For trajectory planning, I was working on RRT and RRT* method, did coding for the method  but got some errors and was not sure how to implement this method for Panda robot so did not implement this method. Helped other teammate with research on model registration and trajectroy planning.
+
+\subsubsection{Orhun Cenk Taskin}
+Initially part of the vision team, I took over the kinematics part after a reconsideration. When I started kinematics had an initial forward kinematics calculation and an inverse kinematics approach by the initial kinematics team. Then I developped the kinematics package as it is now from scratch with its current architecture and ROS implementation, additionally helping the rest with Python, ROS and managing git repository.
+
+\subsubsection{Sriramkumar Sarida}
+My contributions to this project were the implementation of specific tasks alone. I had a separate implementation of Forward and Inverse Kinematics scripts, which are used in the project. Furthermore, I had the initial implementation of the Trajectory planning node using quintic polynomials, which is also used in the project. These programs were coded standalone on python.

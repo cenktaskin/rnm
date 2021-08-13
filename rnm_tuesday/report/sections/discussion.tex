@@ -1,0 +1,14 @@
+\section{Discussion}
+\subsection{Kinematics}
+Kinematics package overall performs satisfactory to the task at hand. Following remarks can be made on the last state of the implementation:
+\begin{itemize}
+    \item  Utilizing ROS Service \& Client pairs instead of some of the topics might be more functional although during the study these features were not digested enough by the participants.
+    \item  The method of fitting trajectory profiles with quintic polynomials yields smooth movements but it operates mostly on suboptimal range in terms of performance. In this study we took consideration of hardware limits to not to operate with any possible harm to the hardware, so smoothenes of quintics were chosen over performance of other methods. Although other methods can be studied.
+    \item Another improvement might be a prelimiary check for target point whether it lays inside the workspace since least squares solution would find the closest point in the workspace even if not reached.
+    \item A better inverse kinematics metric separately evaluating orientation and position can be studied.
+    \item Instead of evenly sampled points across hypothetical hemisphere during scanning process can be converted to random points to reduce bias, which would be a easy alteration with the numpy.random module.
+\end{itemize}    
+\subsection{Vision}
+To perform the registration we had to decide on the voxel size in order to down sample the point cloud. For voxel sizes between 0-3 we got good results.With fast global registration along with local refinement using ICP we achieved a significant improvement in the fitness function value which was 1.0. The RMSE of the inlier was around 0.0322.This was a pretty good result for model registration.
+There were some difficulties in implementing this along with ROS due to version compatibility of Virtual Machine. The Vision on the whole thus, was implemented offline and the target points were obtained and given to the needle insertion package.
+\input{sections/contributions.tex}
